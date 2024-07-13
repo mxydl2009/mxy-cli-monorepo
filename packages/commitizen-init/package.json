@@ -1,0 +1,21 @@
+{
+  "name": "@mxy-cli/commitizen-init",
+  "version": "1.0.0",
+  "description": "init commitizen config",
+  "main": "index.js",
+  "keywords": [
+    "commitizen",
+    "config",
+    "init"
+  ],
+  "files": [
+    "template",
+    "index.js"
+  ],
+  "author": "mxydl2009@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "ejs": "^3.1.10"
+  }
+}

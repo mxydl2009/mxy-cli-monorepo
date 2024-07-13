@@ -1,0 +1,38 @@
+{
+  "name": "@mxy-cli/cli",
+  "version": "1.0.0",
+  "description": "command line tool, for creating javascript library",
+  "bin": {
+    "mxy": "bin/cli.js"
+  },
+  "keywords": [
+    "cli",
+    "javascript",
+    "library"
+  ],
+  "author": "mxydl2009@163.com",
+  "homepage": "",
+  "license": "MIT",
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "dependencies": {
+    "@mxy-cli/core": "^1.0.0",
+    "commander": "^10.0.1",
+    "npmlog": "^7.0.1",
+    "axios": "^1.4.0",
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^11.2.0",
+    "import-local": "^3.1.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.5.1",
+    "url-join": "^4.0.1"
+  }
+}
