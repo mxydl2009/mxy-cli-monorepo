@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "command line tool, for creating javascript library",
   "bin": {
     "mxy": "bin/cli.js"
@@ -24,7 +24,7 @@
     "node": ">= 14.0.0"
   },
   "dependencies": {
-    "@mxy-cli/core": "^1.0.1",
+    "@mxy-cli/core": "^1.0.2",
     "axios": "^1.4.0",
     "colors": "^1.4.0",
     "commander": "^10.0.1",
