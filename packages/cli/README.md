@@ -4,6 +4,12 @@
 
 ## Usage
 
+### global install
+
+`npm install @mxy-cli/cli -g`
+
+then use like the below
+
 ```bash
 # create library
 mxy create

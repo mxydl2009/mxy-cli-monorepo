@@ -14,7 +14,8 @@
   "homepage": "",
   "license": "MIT",
   "files": [
-    "bin"
+    "bin",
+    "lib"
   ],
   "publishConfig": {
     "access": "public"
@@ -34,5 +35,6 @@
     "root-check": "^1.0.0",
     "semver": "^7.5.1",
     "url-join": "^4.0.1"
-  }
+  },
+  "gitHead": "01d46d675a8c4c2b321efd698761f94499645499"
 }

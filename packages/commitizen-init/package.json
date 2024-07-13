@@ -14,8 +14,12 @@
   ],
   "author": "mxydl2009@163.com",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "ejs": "^3.1.10",
     "fs-extra": "^11.2.0"
-  }
+  },
+  "gitHead": "01d46d675a8c4c2b321efd698761f94499645499"
 }
