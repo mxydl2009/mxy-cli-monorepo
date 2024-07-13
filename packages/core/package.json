@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "core module",
   "main": "src/index.js",
-  "scripts": {
-    "preversion": "node scripts/prepublish-check.js",
-    "postversion": "node scripts/post-version.js",
-    "commit": "cz",
-    "prepare": "husky"
-  },
   "keywords": [
     "command line tool",
     "javascript project",
