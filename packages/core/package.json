@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "core module",
   "main": "src/index.js",
   "keywords": [

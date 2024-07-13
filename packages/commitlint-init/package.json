@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/commitlint-init",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "init commitlint config",
   "main": "index.js",
   "keywords": [

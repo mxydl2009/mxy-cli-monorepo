@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/prettier-init",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "init prettier config",
   "main": "index.js",
   "keywords": [
