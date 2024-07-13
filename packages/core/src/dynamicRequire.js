@@ -3,8 +3,6 @@ const path = require('path');
 const npminstall = require('npminstall');
 const fse = require('fs-extra');
 
-const NODE_ENV = process.env.NODE_ENV;
-
 // 安装pkgName到targetDir + node_modules目录下，如果pkgName是有命名空间的包，则命名空间也是一层目录
 async function installPkg(pkgName, targetDir) {
   await npminstall({
