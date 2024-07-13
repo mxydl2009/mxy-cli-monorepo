@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/husky-init",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "init husky config",
   "main": "index.js",
   "keywords": [
