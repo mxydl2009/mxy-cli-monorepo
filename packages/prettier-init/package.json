@@ -15,6 +15,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "url": "https://github.com/mxydl2009/mxy-cli-monorepo.git"
+  },
+  "homepage": "https://github.com/mxydl2009/mxy-cli-monorepo.git/packages/prettier-init",
   "author": "mxydl2009@163.com",
   "license": "MIT",
   "dependencies": {
