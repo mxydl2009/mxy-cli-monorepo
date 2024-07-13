@@ -18,7 +18,6 @@ async function create() {
   const cwd = process.cwd();
   const projectName = userConfig.projectName;
   const projectDir = path.join(cwd, projectName);
-  // const projectDir = await initTemplate.init(userConfig);
   await initTemplate.init(userConfig);
   // 生成LICENSE文件;
   const license = getLicense(userConfig.license, {
@@ -37,6 +36,7 @@ async function create() {
   if (userConfig.prettier) {
     const prettierModule = await dynamicRequire.require(
       '@mxy-cli/prettier-init',
+      path.join(projectDir, '.packages'),
     );
     // prettier初始化
     const prettierPkg = prettierModule.init(userConfig, projectDir);
@@ -44,7 +44,10 @@ async function create() {
   }
 
   if (userConfig.eslint) {
-    const eslintModule = await dynamicRequire.require('@mxy-cli/eslint-init');
+    const eslintModule = await dynamicRequire.require(
+      '@mxy-cli/eslint-init',
+      path.join(projectDir, '.packages'),
+    );
     // eslint初始化
     const eslintPkg = eslintModule.init(userConfig, projectDir);
     configPkg.push(eslintPkg);
@@ -53,6 +56,7 @@ async function create() {
   if (userConfig.commitizen) {
     const commitizenModule = await dynamicRequire.require(
       '@mxy-cli/commitizen-init',
+      path.join(projectDir, '.packages'),
     );
     // commitizen初始化
     const commitizenPkg = commitizenModule.init(userConfig);
@@ -62,6 +66,7 @@ async function create() {
   if (userConfig.commitlint) {
     const commitlintModule = await dynamicRequire.require(
       '@mxy-cli/commitlint-init',
+      path.join(projectDir, '.packages'),
     );
     // commitlint初始化
     const commitlintPkg = commitlintModule.init(userConfig, projectDir);
@@ -72,7 +77,10 @@ async function create() {
   if (userConfig.husky) {
     // husky初始化
     try {
-      const huskyModule = await dynamicRequire.require('@mxy-cli/husky-init');
+      const huskyModule = await dynamicRequire.require(
+        '@mxy-cli/husky-init',
+        path.join(projectDir, '.packages'),
+      );
       const huskyPkg = await huskyModule.init(userConfig, projectDir);
       configPkg.push(huskyPkg);
     } catch (e) {
@@ -80,9 +88,6 @@ async function create() {
       process.exit(1);
     }
   }
-
-  // const npmHookPkg = npmHookModule.init(userConfig, projectDir);
-  // configPkg.push(npmHookPkg);
 
   const lastPkg = mergePkg(pkgObject, ...configPkg);
 
@@ -95,7 +100,7 @@ async function create() {
   await installDeps(projectDir);
 
   // 删除已下载的初始化工具包
-  fse.removeSync(path.resolve(projectDir, '.packages'));
+  fse.removeSync(path.join(projectDir, '.packages'));
 
   npmLog.success(`创建${userConfig.projectName}完成!`);
 }

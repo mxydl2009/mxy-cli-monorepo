@@ -44,7 +44,10 @@ function resolvePkgDir(pkgName, installedDir) {
  * @param {*} installTargetDir 安装目录, 默认.packages
  * @returns
  */
-async function dynamicRequire(pkgName, installTargetDir = '.packages') {
+async function dynamicRequire(
+  pkgName,
+  installTargetDir = path.join(process.cwd(), '.packages'),
+) {
   try {
     await installPkg(pkgName, installTargetDir);
     const pkgDir = resolvePkgDir(pkgName, installTargetDir);
