@@ -15,7 +15,7 @@
   "author": "mxydl2009@163.com",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^11.2.0",
-    "ejs": "^3.1.10"
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0"
   }
 }
