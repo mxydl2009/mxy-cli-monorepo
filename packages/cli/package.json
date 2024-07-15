@@ -1,6 +1,6 @@
 {
   "name": "@mxy-cli/cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "command line tool, for creating javascript library",
   "bin": {
     "mxy": "bin/cli.js"
