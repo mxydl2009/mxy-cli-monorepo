@@ -2,7 +2,6 @@ const pkg = require('../package.json');
 const { create } = require('@mxy-cli/core');
 const npmLog = require('npmlog');
 const { program } = require('commander');
-console.log(require.resolve('./checkBase.js'));
 const checkBase = require('./checkBase');
 
 npmLog.addLevel('success', 2000, { fg: 'green', bold: true }); // 添加自定义日志等级
