@@ -69,22 +69,21 @@ function getLatestVersion(pkgName, registryName = 'npm') {
   };
   const registry = registries[registryName];
   const spinner = ora();
-  spinner.start('正在查询最新版本信息');
+  spinner.start(`正在查询${pkgName}的最新版本信息`);
   return axios
-    .get({
-      url: urlJoin(registry, pkgName),
+    .get(urlJoin(registry, pkgName), {
       // 5s过期时间
       timeout: 5000,
     })
     .then((res) => {
-      spinner.succeed('查询最新版本信息完成');
+      spinner.succeed(`查询${pkgName}最新版本信息完成`);
       if (res.status === 200) {
         return res.data.versions;
       }
       return null;
     })
     .catch((err) => {
-      spinner.fail('查询失败');
+      spinner.fail(`查询${pkgName}最新版本信息失败`);
       throw err;
     });
 }
