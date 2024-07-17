@@ -8,6 +8,7 @@ const axios = require('axios');
 const colors = require('colors');
 const importLocal = require('import-local');
 const npmLog = require('npmlog');
+const ora = require('ora');
 const currentNodeVersion = process.version;
 
 const pkg = require('../package.json');
@@ -67,15 +68,23 @@ function getLatestVersion(pkgName, registryName = 'npm') {
     taobao: 'https://npmmirror.com/',
   };
   const registry = registries[registryName];
+  const spinner = ora();
+  spinner.start('正在查询最新版本信息');
   return axios
-    .get(urlJoin(registry, pkgName))
+    .get({
+      url: urlJoin(registry, pkgName),
+      // 5s过期时间
+      timeout: 5000,
+    })
     .then((res) => {
+      spinner.succeed('查询最新版本信息完成');
       if (res.status === 200) {
         return res.data.versions;
       }
       return null;
     })
     .catch((err) => {
+      spinner.fail('查询失败');
       throw err;
     });
 }
