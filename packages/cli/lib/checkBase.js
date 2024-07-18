@@ -72,8 +72,8 @@ function getLatestVersion(pkgName, registryName = 'npm') {
   spinner.start(`正在查询${pkgName}的最新版本信息`);
   return axios
     .get(urlJoin(registry, pkgName), {
-      // 5s过期时间
-      timeout: 5000,
+      // 8s过期时间
+      timeout: 8000,
     })
     .then((res) => {
       spinner.succeed(`查询${pkgName}最新版本信息完成`);
